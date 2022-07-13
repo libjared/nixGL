@@ -16,5 +16,9 @@
         packages = flattenTree
           (with pkgs; recurseIntoAttrs ((import ./. { inherit pkgs; }).auto));
         defaultPackage = self.packages.${system}.nixGLDefault;
+        nixosModules = rec {
+          nixgl = import ./nixos;
+          default = nixgl;
+        };
       });
 }
