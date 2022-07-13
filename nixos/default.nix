@@ -53,7 +53,7 @@ in {
     ];
     LD_LIBRARY_PATH = lib.concatStringsSep ":" ldLibraryPaths;
   in mkIf cfg.enable {
-    home.programs.zsh.sessionVariables = {
+    programs.zsh.sessionVariables = {
       inherit LIBGL_DRIVERS_PATH LIBVA_DRIVERS_PATH LD_LIBRARY_PATH;
     };
   };
